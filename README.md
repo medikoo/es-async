@@ -3,7 +3,7 @@
 [![Tests coverage][codecov-image]][codecov-url]
 
 # es-async
-## ECMAScript async functions compiler
+## ES2017 async functions compiler
 ### Backed by [nodent-compiler](https://github.com/MatAtBread/nodent-compiler)
 
 Compiles async/await syntax into valid ES2016 code.
@@ -20,7 +20,6 @@ All compilation is handled by preconfigured (to reflect _native_ behavior) [node
 <tr>
 <td>
 <pre><code>async function tellYouLater(sayWhat) {
-	// Do something asynchronous and terminal, such as DB access, web access, etc.
 	await foo();
 	return result ;
 }
