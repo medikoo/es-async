@@ -19,16 +19,16 @@ All compilation is handled by preconfigured (to reflect _native_ behavior) [node
 <tbody>
 <tr>
 <td>
-<pre><code>async function asyncAdd(prefixValue) {
-    return prefixValue + (await postfixValue);
+<pre><code>async function asyncAdd(left) {
+    return left + (await right);
 }
 </pre></code>
 </td>
 <td>
-<pre><code>function asyncAdd(prefixValue) {
-    return new Promise(($return, $error) => Promise.resolve(postfixValue).then($await_1 => {
+<pre><code>function asyncAdd(left) {
+    return new Promise(($return, $error) => Promise.resolve(right).then($await_1 => {
         try {
-            return $return(prefixValue + $await_1);
+            return $return(left + $await_1);
         } catch ($boundEx) {
             return $error($boundEx);
         }
