@@ -20,21 +20,21 @@ All compilation is handled by preconfigured (to reflect _native_ behavior) [node
 <tr>
 <td>
 <pre><code>async function asyncAdd(left) {
-    return left + (await right);
+  return left + (await right);
 }
 </pre></code>
 </td>
 <td>
 <pre><code>function asyncAdd(left) {
     return new Promise(($return, $error) =>
-			Promise.resolve(right).then($await_1 => {
+      Promise.resolve(right).then($await_1 => {
         try {
             return $return(left + $await_1);
         } catch ($boundEx) {
             return $error($boundEx);
         }
-    	}, $error)
-		);
+      }, $error)
+    );
 }
 </pre></code>
 </td>
