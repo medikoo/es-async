@@ -4,11 +4,10 @@
 
 # es-async
 ## ES2017 async functions compiler
-### Backed by [nodent-compiler](https://github.com/MatAtBread/nodent-compiler)
 
-Compiles async/await syntax into valid ES2016 code. 
+Backed by [nodent-compiler](https://github.com/MatAtBread/nodent-compiler), compiles async/await syntax into valid ES2016 code. 
 
-## Usage
+### Usage
 
 ```javascript
 const compileAsync = require('es-async');
