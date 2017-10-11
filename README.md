@@ -16,11 +16,13 @@ const compileAsync = require('es-async');
 const es2016Code = compileAsync(es2017Code);
 ```
 
+### Installation
+
+	$ npm install es-async
+	
 ### Result examples
 
-See [Online demo](http://nodent.mailed.me.uk/#~options~%7B%22mode%22%3A%22promises%22%2C%22promiseType%22%3A%22native%22%2C%22noRuntime%22%3Atrue%2C%22es6target%22%3Atrue%2C%22wrapAwait%22%3Atrue%2C%22spec%22%3Atrue%7D).
-
-All compilation is handled by preconfigured (to reflect _native_ behavior) [nodent-compiler](https://github.com/MatAtBread/nodent-compiler)
+See [online demo](http://nodent.mailed.me.uk/#~options~%7B%22mode%22%3A%22promises%22%2C%22promiseType%22%3A%22native%22%2C%22noRuntime%22%3Atrue%2C%22es6target%22%3Atrue%2C%22wrapAwait%22%3Atrue%2C%22spec%22%3Atrue%7D). Compilation is handled by preconfigured (to reflect _native_ behavior backed by _native_ promises) [nodent-compiler](https://github.com/MatAtBread/nodent-compiler)
 
 <table>
 <thead><tr><th>ES2017</th><th>ES016</th></thead>
@@ -49,10 +51,6 @@ All compilation is handled by preconfigured (to reflect _native_ behavior) [node
 </tr>
 </tbody>
 </table>
-
-### Installation
-
-	$ npm install es-async
 
 ### Tests
 
