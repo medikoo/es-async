@@ -19,17 +19,16 @@ All compilation is handled by preconfigured (to reflect _native_ behavior) [node
 <tbody>
 <tr>
 <td>
-<pre><code>async function tellYouLater(sayWhat) {
-	await foo();
-	return result ;
+<pre><code>async function asyncAdd(prefixValue) {
+    return prefixValue + (await postfixValue);
 }
 </pre></code>
 </td>
 <td>
-<pre><code>function tellYouLater(sayWhat) {
-    return new Promise(($return, $error) => Promise.resolve(foo()).then($await_1 => {
+<pre><code>function asyncAdd(prefixValue) {
+    return new Promise(($return, $error) => Promise.resolve(postfixValue).then($await_1 => {
         try {
-            return $return(result);
+            return $return(prefixValue + $await_1);
         } catch ($boundEx) {
             return $error($boundEx);
         }
