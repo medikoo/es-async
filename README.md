@@ -26,13 +26,15 @@ All compilation is handled by preconfigured (to reflect _native_ behavior) [node
 </td>
 <td>
 <pre><code>function asyncAdd(left) {
-    return new Promise(($return, $error) => Promise.resolve(right).then($await_1 => {
+    return new Promise(($return, $error) =>
+			Promise.resolve(right).then($await_1 => {
         try {
             return $return(left + $await_1);
         } catch ($boundEx) {
             return $error($boundEx);
         }
-    }, $error));
+    	}, $error)
+		);
 }
 </pre></code>
 </td>
