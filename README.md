@@ -11,10 +11,22 @@ Backed by [nodent-compiler](https://github.com/MatAtBread/nodent-compiler), comp
 
 ### Usage
 
+#### Compile async code directly
+
 ```javascript
 const compileAsync = require("es-async");
 
 const es2016Code = compileAsync(es2017Code);
+```
+
+#### Compile specific file
+
+```javascript
+const compileAsyncFromFile = require("es-async/from-file");
+
+compileFromFile(filename).then(es2016Code => {
+	// Process compiled code
+});
 ```
 
 ### Installation
