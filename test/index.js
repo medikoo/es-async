@@ -16,7 +16,8 @@ test("Transpiler", t => {
 
 	t.test("Non-async code is passed as is", t => {
 		const codeSample = "(foo => new Promise(resolve => resolve(4)))";
-		t.equal(transpile(codeSample), codeSample);
+		// Pass null to test case with non object passed as options
+		t.equal(transpile(codeSample, null), codeSample);
 		t.end();
 	});
 	t.end();
