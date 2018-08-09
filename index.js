@@ -19,8 +19,7 @@ module.exports = function (sourceCode, options = {}) {
 	options = ensureObject(options);
 	if (!sourceCode.includes("async")) return sourceCode;
 	return compiler.compile(
-		sourceCode,
-		options.filename,
+		sourceCode, options.filename,
 		Object.assign({}, compilerOptions, { sourcemap: options.sourcemap || false })
 	).code;
 };
