@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+"use strict";
+
+Error.stackTraceLimit = Infinity;
+
+process.on("unhandledRejection", reason => { throw reason; });
+
+const meta = require("../package")
+    , argv = require("minimist")(process.argv.slice(2));
+
+const usage = `es-async v${ meta.version } - Transpile async functions
+
+Usage: es-async filename {OPTIONS}
+
+Options:
+
+    --version, -v  Display version
+		--help,    -h  Show this message
+		--sourcemap    Whether to add sourcemap
+
+`;
+
+if (argv.h || argv.help) {
+	process.stdout.write(usage);
+	return;
+}
+
+if (argv.v || argv.version) {
+	process.stdout.write(`${ meta.version }\n`);
+	return;
+}
+
+const [filename] = argv._;
+
+if (!filename) {
+	process.stderr.write(`Provide filename to compile\n\n${ usage }`);
+	process.exit(1);
+}
+
+require("../from-file")(filename, { sourcemap: argv.sourcemap }).then(compiledSourceCode =>
+	process.stdout.write(compiledSourceCode)
+);

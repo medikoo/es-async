@@ -9,7 +9,19 @@
 
 Backed by [nodent-compiler](https://github.com/MatAtBread/nodent-compiler), compiles async/await syntax into valid ES2016 code.
 
-### Usage
+### Installation
+
+    $ npm install es-async
+
+### CLI usage
+
+Compile JS file using async/await into ES2016 compliant JS file:
+
+```sh
+npx es-async path-to-es2017-file.js > path-to-es2016-file.js
+```
+
+### Programmatical usage
 
 #### Compile async code directly
 
@@ -24,14 +36,10 @@ const es2016Code = compileAsync(es2017Code);
 ```javascript
 const compileAsyncFromFile = require("es-async/from-file");
 
-compileFromFile(filename).then(es2016Code => {
+compileFromFile(es2017Filename).then(es2016Code => {
 	// Process compiled code
 });
 ```
-
-### Installation
-
-    $ npm install es-async
 
 ### Result examples
 

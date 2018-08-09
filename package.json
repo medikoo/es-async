@@ -10,12 +10,16 @@
     "babel",
     "promise"
   ],
+  "bin": {
+    "es-async": "./bin/es-async"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/medikoo/es-async.git"
   },
   "dependencies": {
     "es5-ext": "^0.10.45",
+    "minimist": "^1.2",
     "nodent-compiler": "^3.2.9",
     "pify": "3"
   },
