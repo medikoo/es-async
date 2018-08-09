@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "es5-ext": "^0.10.45",
-    "nodent-compiler": "^3.2.9"
+    "nodent-compiler": "^3.2.9",
+    "pify": "3"
   },
   "devDependencies": {
     "browserstack-tape-runner": "2",
