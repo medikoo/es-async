@@ -1,7 +1,7 @@
 "use strict";
 
 const ensureString   = require("es5-ext/object/validate-stringifiable-value")
-    , ensureObject   = require("es5-ext/object/valid-object")
+    , isObject       = require("es5-ext/object/is-object")
     , NodentCompiler = require("nodent-compiler");
 
 const compiler = new NodentCompiler();
@@ -16,7 +16,7 @@ const compilerOptions = {
 
 module.exports = function (sourceCode, options = {}) {
 	sourceCode = ensureString(sourceCode);
-	options = ensureObject(options);
+	options = isObject(options) ? options : {};
 	if (!sourceCode.includes("async")) return sourceCode;
 	return compiler.compile(
 		sourceCode, options.filename,
