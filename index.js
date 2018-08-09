@@ -14,7 +14,7 @@ const compilerOptions = {
 	wrapAwait: true
 };
 
-module.exports = function (sourceCode, options = {}) {
+module.exports = (sourceCode, options = {}) => {
 	sourceCode = ensureString(sourceCode);
 	options = isObject(options) ? options : {};
 	if (!sourceCode.includes("async")) return sourceCode;
